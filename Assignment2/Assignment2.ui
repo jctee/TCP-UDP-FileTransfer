@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Assignment2Class</class>
+ <widget class="QMainWindow" name="Assignment2Class">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>988</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Assignment2</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="startButton">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>20</y>
+      <width>150</width>
+      <height>46</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="stopButton">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>20</y>
+      <width>150</width>
+      <height>46</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Stop</string>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>240</y>
+      <width>791</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>190</y>
+      <width>231</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Time first packet sent:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="sendTime">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>200</y>
+      <width>231</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>190</y>
+      <width>271</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Time last packet received:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="receiveTime">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>200</y>
+      <width>201</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>130</y>
+      <width>211</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Bytes Sent/Received:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="bytesTransferred">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>130</y>
+      <width>431</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>988</width>
+     <height>38</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSender">
+    <property name="title">
+     <string>Sender</string>
+    </property>
+    <addaction name="senderTCP"/>
+    <addaction name="senderUDP"/>
+   </widget>
+   <widget class="QMenu" name="menuReceiver">
+    <property name="title">
+     <string>Receiver</string>
+    </property>
+    <addaction name="receiverTCP"/>
+    <addaction name="receiverUDP"/>
+   </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Options</string>
+    </property>
+    <addaction name="selectOptions"/>
+   </widget>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="selectFile"/>
+    <addaction name="createFile"/>
+   </widget>
+   <widget class="QMenu" name="menuReset">
+    <property name="title">
+     <string>Reset</string>
+    </property>
+    <addaction name="actionReset"/>
+   </widget>
+   <addaction name="menuSender"/>
+   <addaction name="menuReceiver"/>
+   <addaction name="menuOptions"/>
+   <addaction name="menuFile"/>
+   <addaction name="menuReset"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="senderTCP">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>TCP</string>
+   </property>
+  </action>
+  <action name="senderUDP">
+   <property name="text">
+    <string>UDP</string>
+   </property>
+  </action>
+  <action name="receiverTCP">
+   <property name="text">
+    <string>TCP</string>
+   </property>
+  </action>
+  <action name="receiverUDP">
+   <property name="text">
+    <string>UDP</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>a</string>
+   </property>
+  </action>
+  <action name="actiona">
+   <property name="text">
+    <string>a</string>
+   </property>
+  </action>
+  <action name="selectOptions">
+   <property name="text">
+    <string>Select Options</string>
+   </property>
+  </action>
+  <action name="selectFile">
+   <property name="text">
+    <string>Choose File to Send</string>
+   </property>
+  </action>
+  <action name="actionReset">
+   <property name="text">
+    <string>Reset</string>
+   </property>
+  </action>
+  <action name="createFile">
+   <property name="text">
+    <string>Make a file</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="Assignment2.qrc"/>
+ </resources>
+ <connections/>
+</ui>

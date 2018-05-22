@@ -1,0 +1,106 @@
+4985 Assignment 2 - Pseudo Code
+---Open Gui---
+Create Main Window
+Initialize all buttons:
+    Sender:
+        TCP
+        UDP
+    Receiver:
+        TCP
+        UDP
+    Select Options
+    File:
+        Select
+        Create
+    Start
+    Stop
+
+If user selects Receiver
+    Go to Select Receiver Options
+If user selects Sender
+    Go to Select Sender Options
+
+////RECEIVER SIDE////
+---Select Receiver Options---
+Enter IP Address of Sender
+Enter Port Number
+Go to Create a File to save to
+
+---Create a File to save to---
+Open FileDialog
+Let user create a File
+Save file path
+Open the File
+if TCP
+    Go to Start Server
+if UDP
+    Go to Create/Bind Socket
+
+---Start Server---
+Start a new TCP Server
+Listen for Connections
+If a connection is detected
+    Go to Connection Request
+
+---Connection Request---
+Create a New Socket and assign the next pending connection to it
+Listen for incoming messages
+
+---Wait for Message---
+Constantly listen for a message
+    When a message comes...
+        Go to Receive message
+
+---Receive Message---
+Initialize a buffer
+Read the message into a buffer
+    Write it into the file
+    Continue until Sender disconnects
+    Get Time when last byte is Received for stats
+Go to Display Data
+
+---Create/Bind Socket---
+Create a new Socket
+Bind the Socket
+Go to Wait for message
+
+////Sender SIDE////
+---Select Sender Options---
+Enter IP Address
+Enter Packet Size
+Enter Number of times to send each Packet
+Enter Port Number
+If TCP
+    Go to Create new Socket(TCP)
+If UDP
+    Go to Create new Socket(UDP)
+
+---Create new Socket(TCP)---
+Create new Socket
+Go to Connect to Host
+
+---Connect to Host---
+Connect to Host
+If fail
+    exit
+If success
+    Get current Time for stats
+    Go to Send message
+
+---Send Message---
+Initialize buffer
+while file is not at EOF
+    memset buffer to NULLS
+    read into the buffer number of packets specified by user
+    write buffer into the socket
+Go to disconnect Socket
+
+---Disconnect Socket---
+Disconnect the Socket
+Go to Display Data
+
+---Display Data---
+Display that the file is finished transmitting
+Display Time started and time ended
+Display bytes sent/received
+exit
